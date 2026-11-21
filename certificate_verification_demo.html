@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3156d8">
+  <title>Prodigy Infotech</title>
+  <style>
+    :root {
+      --blue: #3156d8;
+      --blue-light: #d9e0f5;
+      --ink: #202b3a;
+      --muted: #65788d;
+      --line: #e5e9ef;
+      --page: #f3f4fd;
+      --green: #209b63;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(to bottom, var(--page) 0 69%, #fff 69% 100%);
+      min-height: 100vh;
+    }
+    .nav {
+      min-height: 86px;
+      background: var(--blue-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px clamp(22px, 4vw, 48px);
+      gap: 24px;
+      border-top: 2px solid #253e9b;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      color: #2581ff; font-family: Georgia, serif;
+      font-weight: 700; font-size: 20px; line-height: 1.05;
+      letter-spacing: .2px;
+    }
+    .custom-logo {
+  height: 130px; 
+  width: auto;  
+  display: block;
+ }
+    .nav-links { display: flex; gap: clamp(22px, 4.3vw, 62px); align-items: center; }
+    .nav-links a { color: #263243; text-decoration: none; font-size: 18px; }
+    .hero {
+      height: 176px; background: var(--blue); color: white;
+      display: flex; justify-content: center; align-items: flex-start;
+      padding-top: 31px; position: relative; overflow: hidden;
+    }
+    .hero h1 { margin: 0; font-size: 42px; font-weight: 700; }
+    .hero::before, .hero::after {
+      content: ""; position: absolute; width: 100px; height: 100px;
+      border: 22px solid rgba(255,255,255,.025); transform: rotate(30deg);
+    }
+    .hero::before { left: -70px; bottom: -65px; }
+    .hero::after { right: 42px; top: -70px; }
+    main { width: min(978px, calc(100% - 36px)); margin: 164px auto 70px; }
+    .certificate {
+      background: #fff; border: 1px solid #e1e5eb; border-radius: 7px;
+      padding: 34px 34px 28px; position: relative; overflow: hidden;
+      box-shadow: 0 2px 7px rgba(25, 40, 70, .035);
+    }
+    .certificate h2 { font-size: 32px; margin: 0 0 8px; position: relative; z-index: 1; }
+    .details { position: relative; z-index: 1; }
+    .detail {
+      display: flex; align-items: center; gap: 15px;
+      min-height: 63px; border-bottom: 1px solid var(--line);
+      font-size: 18px; color: #111c2b;
+    }
+    .detail:last-child { border-bottom: 0; }
+    .detail .ico { color: #65829a; width: 18px; flex: 0 0 18px; text-align: center; font-size: 19px; }
+    .detail strong { font-weight: 500; }
+    .detail span.value { color: var(--muted); }
+    .watermark {
+      position: absolute; width: min(58vw, 565px); aspect-ratio: 1;
+      border: 39px solid rgba(32,155,99,.075); border-radius: 50%;
+      left: 50%; top: 50%; transform: translate(-50%, -43%);
+      display: grid; place-items: center; pointer-events: none;
+    }
+    .watermark::after {
+      content: ""; width: 43%; height: 22%;
+      border-left: 34px solid rgba(32,155,99,.075);
+      border-bottom: 34px solid rgba(32,155,99,.075);
+      transform: rotate(-45deg) translate(4%, -18%);
+      border-radius: 8px;
+    }
+    .demo-stamp {
+      position: absolute; right: 18px; top: 18px; z-index: 2;
+      background: #fff4d8; color: #79520a; border: 1px solid #f0d99d;
+      border-radius: 4px; padding: 7px 10px; font-size: 11px;
+      font-weight: 800; letter-spacing: .8px;
+    }
+    .notice {
+      margin: 18px 0 0; padding: 12px 14px; border-radius: 5px;
+      background: #fff8e8; border: 1px solid #f0dfb8; color: #72541b;
+      font-size: 13px; line-height: 1.5;
+    }
+    footer { text-align: center; color: #7c8795; font-size: 12px; padding: 0 20px 28px; }
+    /* Keep the learning mockup visually focused while retaining its source disclosure. */
+    .demo-stamp, .notice, footer { display: none; }
+    @media (max-width: 700px) {
+      .nav { min-height: 72px; flex-wrap: wrap; }
+      .brand { font-size: 17px; }
+      .brand-mark { width: 43px; height: 43px; font-size: 24px; }
+      .nav-links { width: 100%; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .nav-links a { font-size: 14px; }
+      .hero { height: 145px; padding-top: 28px; }
+      .hero h1 { font-size: 34px; }
+      main { margin-top: 90px; }
+      .certificate { padding: 26px 20px 20px; }
+      .certificate h2 { font-size: 25px; padding-right: 92px; }
+      .detail { font-size: 15px; min-height: 58px; gap: 10px; }
+      .watermark { width: 82vw; border-width: 27px; }
+      .watermark::after { border-width: 25px; }
+      .demo-stamp { font-size: 9px; right: 12px; top: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+  <img src="ProdigyLogo.png" alt="My Logo" class="custom-logo">
+</div>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#internships">Internships</a>
+      <a href="#faqs">FAQs</a><a href="#contact">Contact</a><a href="#verify">Verify</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home"><h1>Verify</h1></section>
+
+  <main id="verify">
+    <section class="certificate" aria-labelledby="certificate-title">
+      <div class="demo-stamp">DEMO • NOT OFFICIAL</div>
+      <div class="watermark" aria-hidden="true"></div>
+      <h2 id="certificate-title">Certificate Details</h2>
+      <div class="details">
+        <div class="detail"><span class="ico" aria-hidden="true">⚿</span><div><strong>CIN:</strong> <span class="value">PIT/JULY26/5009</span></div></div>
+        <div class="detail"><span class="ico" aria-hidden="true">♙</span><div><strong>Name:</strong> <span class="value">Ditsu Kundu</span></div></div>
+        <div class="detail"><span class="ico" aria-hidden="true">&lt;/&gt;</span><div><strong>Internship Track:</strong> <span class="value">Web Development</span></div></div>
+        <div class="detail"><span class="ico" aria-hidden="true">♧</span><div><strong>College:</strong> <span class="value">Institute of Engineering and Management</span></div></div>
+        <div class="detail"><span class="ico" aria-hidden="true">▧</span><div><strong>LoR:</strong> <span class="value">Yes</span></div></div>
+        <div class="detail"><span class="ico" aria-hidden="true">▷</span><div><strong>Start Date:</strong> <span class="value">01/07/2026</span></div></div>
+        <div class="detail"><span class="ico" aria-hidden="true">□</span><div><strong>End Date:</strong> <span class="value">31/07/2026</span></div></div>
+        <div class="detail"><span class="ico" aria-hidden="true">▦</span><div><strong>Issue Date:</strong> <span class="value">04/08/2026</span></div></div>
+      </div>
+    </section>
+    <p class="notice"><strong>Demonstration only:</strong> This independently created page is not affiliated with or authorized by Prodigy Infotech. It does not verify, authenticate, or certify the certificate details shown above.</p>
+  </main>
+  <footer>Independent certificate-page layout demonstration</footer>
+</body>
+</html>
